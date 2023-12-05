@@ -5,14 +5,12 @@ public class Vin3 {
         Scanner tastiera = new Scanner(System.in);
 
         //Dichiarazione delle costanti
-        final double CapacitaBottiglioni = 1.5;
-        final double Iva = 22;
         final double Lugana = 1;
         final double Barbera = 2;
         final double Merlot = 1.5;
         //Dichiarazione delle variabili
-        int scelta;
-        double litri;
+        int scelta, bottiglioni;
+        double litri, costo, costoTot, Iva;
         String risposta;
 
         do {
@@ -20,10 +18,11 @@ public class Vin3 {
                 ClearScr();
                 System.out.println("Quanti bottiglioni vuoi acquistare? ");
                 bottiglioni = tastiera.nextInt();
-                if (bottiglioni == 0) {
+                if (bottiglioni <= 0) {
                     System.out.println("Inserisci un numero valido! Ripeti il ciclo");
+                    ClearScr();
                 }
-            } while (bottiglioni == 0);
+            } while (bottiglioni <= 0);
             do {
                 ClearScr();
                 System.out.println("Che tipo di vino vuoi acquistare? ");
@@ -36,45 +35,42 @@ public class Vin3 {
 
             if (scelta == 1) {
                 System.out.println("Hai scelto il Barbera");
-                double litri = bottiglioni * 1.5;
-                costo1 = litri * 2;
-                System.out.println("Il prezzo del vino senza iva è: " + costo1);
-                double iva1 = costo1 * 0.21;
-                double costoTot = costo1 + iva1;
+                litri = bottiglioni * 1.5;
+                costo = litri * 2;
+                System.out.println("Il prezzo del vino senza iva è: " + costo);
+                Iva = (costo/100) * 22;
+                costoTot = costo + Iva;
                 System.out.println("Il prezzo del vino con iva è: " + costoTot);
             }
             if (scelta == 2) {
                 System.out.println("Hai scelto il Merlot");
-                double litri = bottiglioni * 1.5;
-                double costo2 = litri * 1.5;
-                System.out.println("Il prezzo del vino senza iva è: " + costo2);
-                double iva2 = costo2 * 0.21;
-                double costoTot2 = costo2 + iva2;
-                System.out.println("Il prezzo del vino con iva è: " + costoTot2);
+                litri = bottiglioni * 1.5;
+                costo = litri * 1.5;
+                System.out.println("Il prezzo del vino senza iva è: " + costo);
+                Iva = (costo/100) * 22;
+                costoTot = costo + Iva;
+                System.out.println("Il prezzo del vino con iva è: " + costoTot);
             }
             if (scelta == 3) {
                 System.out.println("Hai scelto il Lugana");
-                double litri = bottiglioni * 1.5;
-                double costo3 = litri * 1;
-                System.out.println("Il prezzo del vino senza iva è: " + costo3);
-                double iva3 = costo3 * 0.21;
-                double costoTot3 = costo3 + iva3;
-                System.out.println("Il prezzo del vino con iva è: " + costoTot3);
+                litri = bottiglioni * 1.5;
+                costo = litri * 1;
+                System.out.println("Il prezzo del vino senza iva è: " + costo);
+                Iva = (costo/100) * 22;
+                costoTot = costo + Iva;
+                System.out.println("Il prezzo del vino con iva è: " + costoTot);
             }
             System.out.println("Vuoi un'altro cliente?");
             risposta = tastiera.next();
         } while (risposta.equals("S"));
     }
     static void ClearScr()
-        {
-            try{
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+    {
+        try{
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-            }catch(Exception e){
-                System.out.println("errore" +e);
-            }
+        }catch(Exception e){
+            System.out.println("errore" +e);
+        }
     }
 }
-
-
-
