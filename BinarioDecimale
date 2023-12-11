@@ -1,31 +1,32 @@
 import java.util.Scanner;
-
-public class BinarioDecimale {
-
+public class BinarioDecimale{
     public static void main(String[] args) {
         Scanner tastiera = new Scanner(System.in);
+    //Dichiarazione delle variabili
+        int numero;
+        int cifra=0;
+        int controlloCifre;
+        int resto=0;
+        int binario;
+        int decimale;
 
-        //Dichiarazione delle variabili
-        int Decimale = 0;
-        int Posizione = 0;
-        String Binario;
+        System.out.println("Inserisci un numero binario con 8 cifre: ");
+        numero=tastiera.nextInt();
 
-        System.out.print("Inserisci un valore binario di 8 bit: ");
-        Binario = tastiera.next();
-
-        if(Binario.length() != 8) {
-            System.out.println("La stringa inserita non è un byte!");
+        while(numero>0){
+            numero=numero/10;
+            cifra=cifra+1;
         }
-
-        for(int i = 0; i >= 0; i++) {
-            if(Binario == 1) {
-                Decimale += Posizione;
+        if(cifra!=8){
+            System.out.println("Inserisci un numero valido! Non è un byte!");
+        }
+        while(numero>0) {
+            resto = numero % 10;
+            numero = numero / 10;
+            if (resto != 0 || resto != 1) {
+                System.out.println("Inserisci un numero valido!");
             }
-            Posizione++;
         }
-
-        System.out.println("Il valore decimale corrispondente è: " + Decimale);
-
-
+        
     }
 }
