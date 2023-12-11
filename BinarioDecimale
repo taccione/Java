@@ -1,32 +1,58 @@
 import java.util.Scanner;
-public class BinarioDecimale{
+public class BinarioDecimale {
     public static void main(String[] args) {
+
         Scanner tastiera = new Scanner(System.in);
-    //Dichiarazione delle variabili
-        int numero;
-        int cifra=0;
-        int controlloCifre;
-        int resto=0;
-        int binario;
-        int decimale;
 
-        System.out.println("Inserisci un numero binario con 8 cifre: ");
-        numero=tastiera.nextInt();
+        //Dichiarazione delle variabili
+        int n;
+        int num;
+        int resto;
+        int x=0;
+        int cont=0;
+        double y=0;
+        double decimale;
+        double somma=0;
 
-        while(numero>0){
-            numero=numero/10;
-            cifra=cifra+1;
-        }
-        if(cifra!=8){
-            System.out.println("Inserisci un numero valido! Non è un byte!");
-        }
-        while(numero>0) {
-            resto = numero % 10;
-            numero = numero / 10;
-            if (resto != 0 || resto != 1) {
-                System.out.println("Inserisci un numero valido!");
+        System.out.println("Inserisci un byte ");
+        n = tastiera.nextInt();
+        num=n;
+
+        do{
+            resto=n%10;
+            n=n/10;
+            cont=cont+n;
+
+            if (resto!=1 && resto!=0){
+                System.out.println("il numero inserito non è un Byte perchè sono stati inseriti numeri diversi da 1 e 0");
+                break;
             }
+
+            x=x+1;
+
+        }while(n>0);
+
+        if(x!=8){
+            System.out.println("il numero inserito non è un Byte perchè la lunghezza è sbagliata");
         }
-        
+
+        else {
+            System.out.println("il numero inserito è un Byte");
+            do{
+                resto=num%10;
+                num=num/10;
+                decimale = resto * Math.pow(2, y);
+                somma = somma+decimale;
+
+                y=y+1;
+            }while(num>0);
+
+            System.out.println("il numero in decimale è "+somma);
+
+
+        }
+
+
+
     }
 }
