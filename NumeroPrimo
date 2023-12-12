@@ -6,9 +6,9 @@ public class NumeroPrimo {
 
         //Dichiarazione delle variabili
         int n;
-        int num=2;
-        int nPrimi=0;
-        int somma=0;
+        int num = 2;
+        int nPrimi = 0;
+        int somma = 0;
         boolean nPrimo;
 
         System.out.println("Digita il numero dei primi numeri primi che vuoi visualizzare: ");
@@ -34,8 +34,8 @@ public class NumeroPrimo {
         int lim = num/2;
         boolean nPrimo = true;
 
-        for(int div = 2; div <= lim && nPrimo; div++)
-            if(num % div == 0)
+        for(int i = 2; i <= lim && nPrimo; i++)
+            if(num % i == 0)
                 nPrimo = false;
 
         return nPrimo;
