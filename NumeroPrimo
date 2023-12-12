@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		
+	Scanner tastiera = new Scanner(System.in);
+	
+	//Dichiarazione delle variabili
+	   int n;
+    System.out.println("Digita il numero dei primi numeri primi che vuoi visualizzare");
+    n = tastiera.nextInt();
+    System.out.println("I primi " + n + " numeri primi sono:");
+
+    int num = 2, nPrimi = 0,somma=0;
+    boolean nPrimo;
+        while(nPrimi < n)
+        {
+        nPrimo = primo(num);
+        if (nPrimo)
+            {
+            System.out.print(num + " ");
+            nPrimi++;
+            somma = somma + num;
+            }
+            num++;
+        }
+        System.out.println("\n La somma è: " + somma);
+  }
+
+   
+  public static boolean primo(int num) {
+    int lim = num/2;
+    boolean nPrimo = true;
+
+    for(int div = 2; div <= lim && nPrimo; div++)
+      if (num % div == 0)
+        nPrimo = false;
+
+    return nPrimo;
+  }
+}
