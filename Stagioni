@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class Stagioni {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Inserisci il numero del mese: ");
+        int mese = input.nextInt();
+
+        if (mese >= 1 && mese <= 12) {
+            String stagione;
+            switch (mese) {
+                case 12:
+                case 1:
+                case 2:
+                    stagione = "inverno";
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    stagione = "primavera";
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    stagione = "estate";
+                    break;
+                default:
+                    stagione = "autunno";
+                    break;
+            }
+            System.out.println("Il mese " + mese + " si trova in " + stagione);
+        } else {
+            System.out.println("Inserire un numero del mese valido (1-12).");
+        }
+    }
+}
