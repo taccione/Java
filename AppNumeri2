@@ -39,7 +39,6 @@ public class AppNumeri2 {
                                 vetPari[posizione] = vetNumeri[i];
                                 posizione = posizione +1;
                             }
-                            //vetNumeri = numeriCasuali(quantiNumeri);
                         }
                     }else System.out.println("non è stato creato il vettore");
                     break;
@@ -57,7 +56,6 @@ public class AppNumeri2 {
                                 vetDispari[posizione] = vetNumeri[i];
                                 posizione = posizione +1;
                             }
-                            //vetNumeri = numeriCasuali(quantiNumeri);
                         }
                     }else System.out.println("non è stato creato il vettore");
                     break;
