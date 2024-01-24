@@ -8,7 +8,7 @@ public class LottoVenezia {
 
         //Dichiarazione delle variabili
         boolean fine = true;
-        int[] numeriCasuali = new int[5]; 
+        int[] numeriCasuali = new int[5];
 
         // Ruota Venezia: Estrarre 5 numeri casuali nel range 1-90
         // Visualizza: Visualizzare i valori estratti
@@ -21,7 +21,7 @@ public class LottoVenezia {
                 case 1:
                     System.out.println("opzione 1");
                     for (int i = 0; i < 5; i++) {
-                        numeriCasuali[i] = random.nextInt(101); 
+                        numeriCasuali[i] = random.nextInt(101);
                     }
                     break;
                 case 2:
@@ -83,13 +83,13 @@ public class LottoVenezia {
         }
     }
 
-    
-    
-    private static void visualizza(void[] v) {
+
+
+    private static void visualizza(int [] v) {
         for (int i = 0; i < v.length; i++) {
             System.out.println(i + "=" + v[i]);
         }
     }
-    
-    
+
+
 }
