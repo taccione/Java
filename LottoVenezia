@@ -21,7 +21,7 @@ public class LottoVenezia {
                 case 1:
                     System.out.println("opzione 1");
                     for (int i = 0; i < 5; i++) {
-                        numeriCasuali[i] = random.nextInt(101);
+                        numeriCasuali[i] = random.nextInt(91);
                     }
                     break;
                 case 2:
