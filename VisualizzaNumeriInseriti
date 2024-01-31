@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Visualizza {
+    public static void main(String[] args) {
+        Scanner tastiera = new Scanner(System.in);
+
+        int[] vettore = new int[5];
+        int contatore = 0;
+        int inserimento;
+        int conta = 0;
+
+        do {
+            inserimento = tastiera.nextInt();
+            vettore[contatore] = inserimento;
+            contatore++;
+            conta++;
+        } while (contatore < 5);
+
+        System.out.println("Visualizzazione numeri:");
+        VisualizzaNumeri(vettore);
+
+    }
+
+    private static void VisualizzaNumeri (int[] vettore) {
+        for(int numero : vettore) {
+            System.out.println(numero + " ");
+        }
+    }
+}
