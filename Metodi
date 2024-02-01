@@ -6,7 +6,8 @@ public class Metodi {
         //Dichiarazione delle variabili
         int a, b;
         int opzioni;
-        int somma, differenza, motliplicazione, divisione, potenza;
+        int somma, differenza, motliplicazione, potenza;
+        double divisione;
 
         System.out.println("Inserisci il primo numero: ");
         a = tastiera.nextInt();
@@ -14,6 +15,11 @@ public class Metodi {
         b = tastiera.nextInt();
 
         System.out.println("Inserisci l'opzione tra 1 e 5: ");
+        System.out.println("Inserisci 1 per la somma");
+        System.out.println("Inserisci 2 per la differenza");
+        System.out.println("Inserisci 3 per il prodotto");
+        System.out.println("Inserisci 4 per la divisione");
+        System.out.println("Inserisci 5 per la potenza");
         opzioni = tastiera.nextInt();
 
         switch(opzioni){
@@ -37,10 +43,10 @@ public class Metodi {
                 potenza = Potenza(a,b);
                 System.out.println("La potenza è: " + potenza);
                 break;
-
         }
         //end switch case
 
+        System.out.println("Bella vecchio");
     }
 
     //metodo per la somma di due numeri
