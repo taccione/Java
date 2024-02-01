@@ -1,0 +1,75 @@
+import java.util.Scanner;
+public class Metodi {
+    public static void main(String[] args) {
+        Scanner tastiera = new Scanner(System.in);
+
+        //Dichiarazione delle variabili
+        int a, b;
+        int opzioni;
+        int somma, differenza, motliplicazione, divisione, potenza;
+
+        System.out.println("Inserisci il primo numero: ");
+        a = tastiera.nextInt();
+        System.out.println("Inserisci il secondo numero: ");
+        b = tastiera.nextInt();
+
+        System.out.println("Inserisci l'opzione tra 1 e 5: ");
+        opzioni = tastiera.nextInt();
+
+        switch(opzioni){
+            case 1:
+                somma = Sum(a,b);
+                System.out.println("La somma è: " + somma);
+                break;
+            case 2:
+                differenza = Diff(a,b);
+                System.out.println("La differenza è: " + differenza);
+                break;
+            case 3:
+                motliplicazione = Multiply(a,b);
+                System.out.println("Il prodotto è: " + motliplicazione);
+                break;
+            case 4:
+                divisione = Div(a,b);
+                System.out.println("La divisione è: " + divisione);
+                break;
+            case 5:
+                potenza = Potenza(a,b);
+                System.out.println("La potenza è: " + potenza);
+                break;
+
+        }
+        //end switch case
+
+    }
+
+    //metodo per la somma di due numeri
+    public static int Sum(int a, int b){
+        return a + b;
+    }
+
+    //metodo per la differenza di due numeri
+    public static int Diff(int a, int b){
+        return a - b;
+    }
+
+    //metodo per il prodotto di due numeri
+    public static int Multiply(int a, int b){
+        return a * b;
+    }
+
+    //metodo per la divisione di due numeri
+    public static int Div(int a, int b){
+        return a / b;
+    }
+
+    //metodo per la potenza di due numeri (a elevato alla b)
+    public static int Potenza(int a, int b){
+        int potenza = 1;
+        for(int i = 0; i < b; i++){
+            potenza *= a;
+        }
+        return potenza;
+    }
+
+}
