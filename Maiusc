@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Maiusc {
+    public static void main(String[] args) {
+        Scanner tastiera = new Scanner(System.in);
+
+        //Dichiarazione delle variabili
+        String[] parole = {"America", "spagna", "Marocco", "italia"};
+        System.out.println("Le parole che iniziano con la lettera maiuscola sono: ");
+        String[] maiusc = StringaMaiuscola(parole);
+        for (String parola : maiusc) {
+            System.out.println(parola);
+        }
+    }
+
+    //metodo per stampare le stringhe che cominciano con lettera maiuscola
+    private static String[] StringaMaiuscola(String[] parole) {
+        int cont = 0;
+        for (String parola : parole) {
+            if (parola.charAt(0) >= 'A' && parola.charAt(0) <= 'Z') {
+                cont++;
+            }
+        }
+        String[] maiusc = new String[cont];
+        cont = 0;
+        for (String parola : parole) {
+            if (parola.charAt(0) >= 'A' && parola.charAt(0) <= 'Z') {
+                maiusc[cont] = parola;
+                cont++;
+            }
+        }
+        return maiusc;
+    }
+
+}
