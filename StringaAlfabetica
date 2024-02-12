@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class StringaAlfabetica {
+    public static void main(String[] args) {
+        Scanner tastiera = new Scanner(System.in);
+
+        String stringa;
+
+        System.out.println("Inserisci la stringa:");
+        stringa = tastiera.nextLine();
+
+        if (contieneSoloAlfabetici(stringa)) {
+            System.out.println("Tutti alfabetici");
+        } else {
+            System.out.println("Stringa errata");
+        }
+    }
+
+    public static boolean contieneSoloAlfabetici(String input) {
+        for (int i = 0; i < input.length(); i++) {
+            if (!Character.isLetter(input.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
