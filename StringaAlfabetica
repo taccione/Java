@@ -1,25 +1,37 @@
 import java.util.Scanner;
+
 public class StringaAlfabetica {
     public static void main(String[] args) {
         Scanner tastiera = new Scanner(System.in);
 
-        String stringa;
+        /*
+        Data una stringa di caratteri determinare se contiene solo caratteri alfabetici (A..Z);
+Per risolvere l'esercizio utilizzare un metodo che ritorna un valore bool true se sono tutti alfabetici, false in caso contrario.
+Se true stampare "Tutti alfabetici" altrimenti  altrimenti "Stringa errata".
+         */
 
-        System.out.println("Inserisci la stringa:");
-        stringa = tastiera.nextLine();
+        //Dichiarazione delle variabili
+        String frase;
 
-        if (contieneSoloAlfabetici(stringa)) {
+        System.out.println("Inserisci la stringa da analizzare: ");
+        frase = tastiera.nextLine();
+
+        //ControlloAlfabetici(frase);
+
+        if (ControlloAlfabetici(frase)) {
             System.out.println("Tutti alfabetici");
         } else {
             System.out.println("Stringa errata");
         }
+
     }
 
-    public static boolean contieneSoloAlfabetici(String input) {
-        for (int i = 0; i < input.length(); i++) {
-            if (!Character.isLetter(input.charAt(i))) {
+    private static boolean ControlloAlfabetici(String stringa) {
+        for (int i = 0; i < stringa.length(); i++) {
+            if (!Character.isLetter(stringa.charAt(i))) {
                 return false;
             }
+
         }
         return true;
     }
