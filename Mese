@@ -1,0 +1,29 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Main {
+public static void Mese(String[] args) {
+Scanner kb = new Scanner(System.in);
+/* System.out.println("Inserisci il valore numerico di un mese"); int mese; boolean meseOk = false; do { try { Classi Wrapper: -boolean -> Boolean -char -> Character -int -> Integer -double -> Double ecc. Integer Valore = 3; int valore = Valore; System.out.println(valore); String parolaNumero = Valore.toString(valore); */ /* Esempio 1 mese = Integer.parseInt(kb.nextLine()); meseOk = LeggiMese(mese); if (!meseOk) { System.out.println("Mese errato"); } } catch (Exception e) { System.out.println("Formato non valido"); //kb.nextLine(); } } while (!meseOk); */ char car = '1';
+if (car >= 'a' && car <= 'z') {
+System.out.println("Il valore è un carattere");
+} else {
+System.out.println("Il valore non è un carattere");
+}
+if (Character.isLetter(Character.toUpperCase(car))) {
+System.out.println("Il valore è un carattere");
+} else {
+System.out.println("Il valore non è un carattere");
+}
+}
+
+private static boolean LeggiMese(int mese) {
+boolean controllo = mese >= 1 && mese <= 12;
+return controllo;
+}
+
+private static String GetStrMese(int Valmese) {
+String[] mesi = {"Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"};
+/*for(int i=0;i< mesi.length;i++){ System.out.println( i+ " "+ mesi[i]); }*/ return mesi[Valmese - 1];
+}
+}
