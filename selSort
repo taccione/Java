@@ -1,22 +1,5 @@
 import java.util.Scanner;
 public class Main {
-    public static void selectionSort(int[] array) {
-        int n = array.length;
-        for (int i = 0; i < n-1; i++) {
-            // Trova l'elemento più piccolo nell'array non ordinato
-            int minIndex = i;
-            for (int j = i+1; j < n; j++) {
-                if (array[j] < array[minIndex]) {
-                    minIndex = j;
-                }
-            }
-            // Scambia l'elemento più piccolo con l'elemento attuale
-            int temp = array[minIndex];
-            array[minIndex] = array[i];
-            array[i] = temp;
-        }
-    }
-
     public static void main(String[] args) {
         Scanner scanner= new Scanner(System.in);
         System.out.println("Inserisci la dimensione del array");
@@ -56,4 +39,20 @@ public class Main {
      
      
 }
+public static void selectionSort(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n-1; i++) {
+            // Trova l'elemento più piccolo nell'array non ordinato
+            int minIndex = i;
+            for (int j = i+1; j < n; j++) {
+                if (array[j] < array[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            // Scambia l'elemento più piccolo con l'elemento attuale
+            int temp = array[minIndex];
+            array[minIndex] = array[i];
+            array[i] = temp;
+        }
+    }
 }
