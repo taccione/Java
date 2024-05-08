@@ -1,0 +1,72 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Dupl {
+    public static void main(String[] args) {
+        Scanner tastiera = new Scanner(System.in);
+        int lunghezza;
+        System.out.println("Inserisci la lunghezza dell'array: ");
+        lunghezza = tastiera.nextInt();
+        int[] array = new int[lunghezza];
+        System.out.println("Inserisci i valori del vettore: ");
+        for (int i = 0; i< lunghezza; i++){
+            array[i] = tastiera.nextInt();
+        }
+
+        // Duplica l'array originale
+        int[] arrayCopia1 = duplicateArray(array);
+        int[] arrayCopia2 = duplicateArray(array);
+
+        // Ordina l'array copia 1 con Selection Sort
+        selectionSort(arrayCopia1);
+
+        // Ordina l'array copia 2 con Bubble Sort
+        bubbleSort(arrayCopia2);
+
+        // Stampa i risultati
+        System.out.println("Array originale: " + Arrays.toString(array));
+        System.out.println("Array copia 1 (ordinato con Selection Sort): " + Arrays.toString(arrayCopia1));
+        System.out.println("Array copia 2 (ordinato con Bubble Sort): " + Arrays.toString(arrayCopia2));
+    }
+
+    // Metodo per duplicare un array
+    public static int[] duplicateArray(int[] arr) {
+        int[] duplicate = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            duplicate[i] = arr[i];
+        }
+        return duplicate;
+    }
+
+    // Ordinamento tramite Selection Sort
+    public static void selectionSort(int[] array) {
+        int n = array.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (array[j] < array[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            int temp = array[minIndex];
+            array[minIndex] = array[i];
+            array[i] = temp;
+        }
+    }
+
+    // Ordinamento tramite Bubble Sort
+    public static void bubbleSort(int[] array) {
+        int n = array.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
