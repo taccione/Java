@@ -1,0 +1,119 @@
+import java.util.Random;
+public class FrequenzaDado {
+    public static void main(String[] args) {
+        //int faccia1 = 0, faccia2 = 0 , faccia3 = 0, faccia4 = 0, faccia5 = 0, faccia6 = 0;
+        int[] frequenze = new int[7];
+        //Cosa c'è dentro al vettore dopo che è stato creato?
+        for(int i=0; i<frequenze.length;i++){
+            System.out.println(frequenze[i]);
+        }
+        //frequenze[0] contiene il valore Random
+        //frequenze[1] contiene le frequenze con cui compare la faccia 1
+        //frequenze[6] contiene le frequenze con cui compare la faccia 6
+        for (int i = 0; i < 100; i++) {
+            //System.out.println(generaNumero(0,6));
+            frequenze[0] = generaNumero(0,6);
+            //dado(faccia);
+            dado(frequenze[0]);
+            switch (frequenze[0]){
+                case 1:
+                    frequenze[1]++;
+                    break;
+                case 2:
+                    frequenze[2]++;
+                    break;
+                case 3:
+                    frequenze[3]++;
+                    break;
+                case 4:
+                    frequenze[4]++;
+                    break;
+                case 5:
+                    frequenze[5]++;
+                    break;
+                case 6:
+                    frequenze[6]++;
+                    break;
+            }
+        }
+        /*System.out.printf("Faccia 1: %d, Faccia 2: %d, Faccia 3: %d, Faccia 4: %d, Faccia 5: %d ,Faccia 6: %d", faccia1,
+                faccia2, faccia3, faccia4, faccia5, faccia6);*/
+        for(int i=1; i<frequenze.length;i++){
+            System.out.printf("Faccia %d Frequenza = %d, ", i, frequenze[i]);
+        }
+        //%d = intero, %s = stringa, %f = float/double, %c = carattere
+    }
+
+    public static void dado(int faccia) {
+        switch (faccia) {
+            case 1:
+                System.out.println("\t\t\t\t ╔════════╗");
+                System.out.println("\t\t\t\t ║        ║");
+                System.out.println("\t\t\t\t ║    0   ║");
+                System.out.println("\t\t\t\t ║        ║");
+                System.out.println("\t\t\t\t ╚════════╝");
+                break;
+            case 2:
+                System.out.println("\t\t\t\t ╔════════╗");
+                System.out.println("\t\t\t\t ║0       ║");
+                System.out.println("\t\t\t\t ║        ║");
+                System.out.println("\t\t\t\t ║       0║");
+                System.out.println("\t\t\t\t ╚════════╝");
+                break;
+            case 3:
+                System.out.println("\t\t\t\t ╔════════╗");
+                System.out.println("\t\t\t\t ║0       ║");
+                System.out.println("\t\t\t\t ║    0   ║");
+                System.out.println("\t\t\t\t ║       0║");
+                System.out.println("\t\t\t\t ╚════════╝");
+                break;
+            case 4:
+                System.out.println("\t\t\t\t ╔════════╗");
+                System.out.println("\t\t\t\t ║0      0║");
+                System.out.println("\t\t\t\t ║        ║");
+                System.out.println("\t\t\t\t ║0      0║");
+                System.out.println("\t\t\t\t ╚════════╝");
+                break;
+            case 5:
+                System.out.println("\t\t\t\t ╔════════╗");
+                System.out.println("\t\t\t\t ║0      0║");
+                System.out.println("\t\t\t\t ║    0   ║");
+                System.out.println("\t\t\t\t ║0      0║");
+                System.out.println("\t\t\t\t ╚════════╝");
+                break;
+            case 6:
+                System.out.println("\t\t\t\t ╔════════╗");
+                System.out.println("\t\t\t\t ║0      0║");
+                System.out.println("\t\t\t\t ║0      0║");
+                System.out.println("\t\t\t\t ║0      0║");
+                System.out.println("\t\t\t\t ╚════════╝");
+                break;
+            default:
+                System.out.println("Valore non valido");
+                break;
+        }
+    }
+
+    public static void attesa(int x) {
+        try {
+            Thread.sleep(1000 * x);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void cls() {
+        try {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } catch (Exception E) {
+            System.out.println(E);
+        }
+    }
+
+    //private static void generaNumero(int min, int max) {
+    private static int generaNumero(int min, int max) {
+        Random casuale = new Random();
+        return casuale.nextInt(min, max) + 1;
+        //System.out.println(valFaccia);
+    }
+}
